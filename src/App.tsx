@@ -6,20 +6,19 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { UnownLogo } from "@/components/UnownLogo";
 import { LanguageToggle } from "@/components/LanguageToggle";
-import { buildSignatureHTML } from "@/lib/signature";
+import { buildSignatureHTML, WEBSITE } from "@/lib/signature";
 import type { SignatureData } from "@/lib/signature";
 
 function App() {
   const { t } = useTranslation();
   const [toast, setToast] = useState(false);
   const [data, setData] = useState<SignatureData>({
-    name: "Enzo Lizama",
-    role: "Co-founder & Software Engineer",
-    phone: "+51 999 999 999",
-    phoneRaw: "51999999999",
-    email: "enzo.lizama@boxtinglabs.com",
-    location: "Lima, PE",
-    web: "boxtinglabs.com",
+    name: "",
+    role: "",
+    phone: "",
+    phoneRaw: "",
+    email: "",
+    location: "",
   });
 
   const update = useCallback(
@@ -53,14 +52,13 @@ function App() {
     setTimeout(() => setToast(false), 2500);
   };
 
-  const fields: { key: keyof SignatureData; label: string }[] = [
-    { key: "name", label: t("fullName") },
-    { key: "role", label: t("role") },
-    { key: "phone", label: t("phone") },
-    { key: "phoneRaw", label: t("phoneRaw") },
-    { key: "email", label: t("email") },
-    { key: "location", label: t("location") },
-    { key: "web", label: t("website") },
+  const fields: { key: keyof SignatureData; label: string; placeholder: string }[] = [
+    { key: "name", label: t("fullName"), placeholder: t("placeholderName") },
+    { key: "role", label: t("role"), placeholder: t("placeholderRole") },
+    { key: "phone", label: t("phone"), placeholder: t("placeholderPhone") },
+    { key: "phoneRaw", label: t("phoneRaw"), placeholder: t("placeholderPhoneRaw") },
+    { key: "email", label: t("email"), placeholder: t("placeholderEmail") },
+    { key: "location", label: t("location"), placeholder: t("placeholderLocation") },
   ];
 
   return (
@@ -89,7 +87,7 @@ function App() {
             </p>
 
             <div className="space-y-4">
-              {fields.map(({ key, label }) => (
+              {fields.map(({ key, label, placeholder }) => (
                 <div key={key} className="space-y-1.5">
                   <Label htmlFor={key} className="text-xs">
                     {label}
@@ -98,10 +96,21 @@ function App() {
                     id={key}
                     value={data[key]}
                     onChange={update(key)}
+                    placeholder={placeholder}
                     className="bg-muted/50 focus:bg-white"
                   />
                 </div>
               ))}
+
+              {/* Website — fixed, not editable */}
+              <div className="space-y-1.5">
+                <Label className="text-xs">{t("website")}</Label>
+                <Input
+                  value={WEBSITE}
+                  disabled
+                  className="bg-muted/30 text-muted-foreground cursor-not-allowed"
+                />
+              </div>
             </div>
 
             <Button onClick={copySignature} className="w-full mt-6">

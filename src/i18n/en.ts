@@ -20,11 +20,16 @@ export default {
     step4: '4. Click "Insert", then "Save Changes".',
     toast: "HTML copied to clipboard!",
     previewNote: "The logo loads from Google Drive (same URL as the existing team template). If it appears broken here, it will still render correctly in Gmail as long as the file sharing is set to \"Anyone with the link can view\".",
-    // Signature labels
     sigPhone: "Phone:",
     sigEmail: "Email:",
     sigLocation: "Location:",
     sigWeb: "Web:",
     language: "Language",
+    placeholderName: "e.g. Enzo Lizama",
+    placeholderRole: "e.g. Co-founder & Software Engineer",
+    placeholderPhone: "e.g. +51 999 999 999",
+    placeholderPhoneRaw: "e.g. 51999999999",
+    placeholderEmail: "e.g. enzo.lizama@boxtinglabs.com",
+    placeholderLocation: "e.g. Lima, PE",
   },
 } as const;

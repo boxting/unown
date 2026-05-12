@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Unown — Boxting Labs Gmail Signature Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Internal tool for the Boxting Labs team to generate consistent Gmail signatures.
 
-Currently, two official plugins are available:
+## Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Visit the deployed app at [boxting.github.io/unown](https://boxting.github.io/unown/)
+2. Fill in your details (name, role, phone, email, location)
+3. The live preview updates as you type
+4. Click **Copy HTML — paste into Gmail**
 
-## React Compiler
+### Setting up your Gmail signature
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Open Gmail and click the **gear icon** (top-right) → **See all settings**
+2. Scroll down to the **Signature** section
+3. Create a new signature or select an existing one
+4. Click the **`</>`** (source/HTML) icon in the signature editor toolbar
+5. Paste the copied HTML and click **Insert**
+6. Click **Save Changes** at the bottom of the page
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm build
 ```
+
+## Deployment
+
+The app auto-deploys to GitHub Pages on every push to `main` via the workflow in `.github/workflows/deploy.yml`.
+
+## Stack
+
+- React + TypeScript + Vite
+- Tailwind CSS + shadcn/ui
+- i18next (English / Spanish)
+- GitHub Pages (pnpm + Vite)

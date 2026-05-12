@@ -20,11 +20,16 @@ export default {
     step4: '4. Haz clic en "Insertar", luego en "Guardar cambios".',
     toast: "¡HTML copiado al portapapeles!",
     previewNote: "El logo se carga desde Google Drive (la misma URL que la plantilla del equipo). Si aparece roto aquí, se renderizará correctamente en Gmail siempre que el archivo esté compartido como \"Cualquiera con el enlace puede ver\".",
-    // Signature labels
     sigPhone: "Teléfono:",
     sigEmail: "Correo:",
     sigLocation: "Ubicación:",
     sigWeb: "Web:",
     language: "Idioma",
+    placeholderName: "ej. Enzo Lizama",
+    placeholderRole: "ej. Co-founder & Software Engineer",
+    placeholderPhone: "ej. +51 999 999 999",
+    placeholderPhoneRaw: "ej. 51999999999",
+    placeholderEmail: "ej. enzo.lizama@boxtinglabs.com",
+    placeholderLocation: "ej. Lima, PE",
   },
 } as const;
