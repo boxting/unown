@@ -1,5 +1,5 @@
 const LOGO_URL =
-  "https://lh3.googleusercontent.com/d/1NbOFTUy9m3nrHRo1jAgGfwd8dRCtAxAl=w1000?authuser=0";
+  "https://cdn.jsdelivr.net/gh/boxting/unown@main/public/boxting-email-logo.png";
 
 export const WEBSITE = "boxtinglabs.com";
 

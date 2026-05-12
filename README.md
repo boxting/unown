@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="public/favicon.svg" alt="Unown" width="96" height="96">
+</p>
+
 # Unown — Boxting Labs Gmail Signature Generator
 
 Internal tool for the Boxting Labs team to generate consistent Gmail signatures.
